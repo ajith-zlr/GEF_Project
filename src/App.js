@@ -1,11 +1,12 @@
 
 import './App.css';
-import OrderHistory from './Components/OrderHistory';
+import OrderHistory from './Views/OrderHistory';
+
 
 function App() {
   return (
     <div className="App">
-     <OrderHistory/>
+   <OrderHistory/>
     </div>
   );
 }
