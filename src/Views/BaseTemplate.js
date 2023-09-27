@@ -1,5 +1,5 @@
-import { Box, Button, FormControl, IconButton, InputBase, InputLabel, MenuItem, Paper, Select, Tab, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tabs, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import { Box, Button, FormControl, IconButton, InputBase, InputLabel, MenuItem, Paper, Select, Typography } from '@mui/material'
+import React from 'react'
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -8,17 +8,15 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 
-function BaseTemplate({ name, age, setAge, searchFunction }) {
+function BaseTemplate({ name, broker, setBroker, supplier, setSupplier, searchFunction }) {
 
 
-    const handleChange = (event) => {
-        setAge(event.target.value);
+    const handleChange1 = (event) => {
+        setBroker(event.target.value);
     };
-
-
-
-
-    console.log(name, "inside template")
+    const handleChange2 = (event) => {
+        setSupplier(event.target.value);
+    };
 
     return (
         <Box sx={{ p: 5, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 2, pr: 5, pl: 5 }}>
@@ -51,51 +49,52 @@ function BaseTemplate({ name, age, setAge, searchFunction }) {
                             </Box>
                         </Box>
                         <Box sx={{ minWidth: 150 }}><FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                            <InputLabel id="demo-simple-select-label">Broker</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
-                                value={age}
-                                label="Age"
-                                onChange={handleChange}
+                                value={broker}
+                                label="Broker"
+                                onChange={handleChange1}
                             >
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
+
+                                <MenuItem value={10}>Rajesh</MenuItem>
+                                <MenuItem value={20}>Kiran</MenuItem>
                             </Select>
                         </FormControl></Box>
                         <Box sx={{ minWidth: 120 }}><FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                            <InputLabel id="demo-simple-select-label">Supplier</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
-                                value={age}
-                                label="Age"
-                                onChange={handleChange}
+                                value={supplier}
+                                label="Supplier"
+                                onChange={handleChange2}
                             >
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
+
+                                <MenuItem value={20}>Rajesh Traders</MenuItem>
+                                <MenuItem value={30}>Rizwan</MenuItem>
                             </Select>
                         </FormControl></Box>
-                        {name == "DeliveryChanges" && <Box sx={{ minWidth: 120 }}>
+                        {name === "DeliveryChanges" && <Box sx={{ minWidth: 120 }}>
                             <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                                <InputLabel id="demo-simple-select-label">Broker</InputLabel>
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={age}
-                                    label="Age"
-                                    onChange={handleChange}
+                                    value={broker}
+                                    label="Broker"
+                                    onChange={handleChange1}
                                 >
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
+                                    <MenuItem value={10}>Qc status</MenuItem>
+                                    <MenuItem value={20}>Accepted</MenuItem>
+                                    <MenuItem value={30}>Rejected</MenuItem>
+                                    <MenuItem value={30}>Accepeted With</MenuItem>
                                 </Select>
 
                             </FormControl>
                             <Box>
-                                
+
                             </Box>
                         </Box>}
                         <Box>
