@@ -3,8 +3,9 @@ import BaseTemplate from './BaseTemplate'
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 
 function DeliveryChanges() {
+    const [broker, setBroker] = React.useState('');
     const [supplier, setSupplier] = React.useState('');
-        const [status, newStatus] = React.useState(0);
+    const [status, setStatus] = React.useState(0);
 
     const searchFunction = () => {
         console.log(supplier, "supplier")
@@ -22,7 +23,7 @@ function DeliveryChanges() {
 
     return (
         <>
-            <BaseTemplate name={"DeliveryChanges"} setSupplier={setSupplier} supplier={supplier} newStatus={newStatus} status={status} searchFunction={searchFunction} />
+            <BaseTemplate name={"DeliveryChanges"} setSupplier={setSupplier} supplier={supplier} broker={broker} setBroker={setBroker} setStatus={setStatus} status={status} searchFunction={searchFunction} />
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>

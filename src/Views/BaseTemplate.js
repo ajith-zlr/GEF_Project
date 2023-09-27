@@ -8,7 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 
 
-function BaseTemplate({ name, broker, setBroker, supplier, setSupplier, searchFunction }) {
+function BaseTemplate({ name, broker, setBroker, supplier, setSupplier, status, setStatus, searchFunction }) {
 
 
     const handleChange1 = (event) => {
@@ -16,6 +16,10 @@ function BaseTemplate({ name, broker, setBroker, supplier, setSupplier, searchFu
     };
     const handleChange2 = (event) => {
         setSupplier(event.target.value);
+    };
+
+    const handleChange3 = (event) => {
+        setStatus(event.target.value);
     };
 
     return (
@@ -72,23 +76,22 @@ function BaseTemplate({ name, broker, setBroker, supplier, setSupplier, searchFu
                                 onChange={handleChange2}
                             >
 
-                                <MenuItem value={20}>Rajesh Traders</MenuItem>
-                                <MenuItem value={30}>Rizwan</MenuItem>
+                                <MenuItem value={10}>Rajesh Traders</MenuItem>
+                                <MenuItem value={20}>Rizwan</MenuItem>
                             </Select>
                         </FormControl></Box>
                         {name === "DeliveryChanges" && <Box sx={{ minWidth: 120 }}>
                             <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">Broker</InputLabel>
+                                <InputLabel id="demo-simple-select-label">QC Status</InputLabel>
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={broker}
-                                    label="Broker"
-                                    onChange={handleChange1}
+                                    value={status}
+                                    label="QC Status"
+                                    onChange={handleChange3}
                                 >
-                                    <MenuItem value={10}>Qc status</MenuItem>
-                                    <MenuItem value={20}>Accepted</MenuItem>
-                                    <MenuItem value={30}>Rejected</MenuItem>
+                                    <MenuItem value={10}>Accepted</MenuItem>
+                                    <MenuItem value={20}>Rejected</MenuItem>
                                     <MenuItem value={30}>Accepeted With</MenuItem>
                                 </Select>
 
