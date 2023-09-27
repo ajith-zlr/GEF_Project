@@ -1,25 +1,26 @@
-import {  Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@mui/material'
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import React from 'react'
 import BaseTemplate from './BaseTemplate';
 
 function PurchaseOrders() {
     const [broker, setBroker] = React.useState('');
-   
-    function createData(name, calories, fat, carbs, protein,food,food1) {
-        return { name, calories, fat, carbs, protein, food,food1 };
+    const [supplier, setSupplier] = React.useState('');
+
+    function createData(OfferID, PONum, PODate, supplierId, supplierName, broker, status) {
+        return { OfferID, PONum, PODate, supplierId, supplierName, broker, status };
     }
     const rows = [
-        createData('G3452',0 , 0, 34523, 'Rajesh Traders','kiran','Approval Pending'),
-        createData('G3454',0, 0, 34523, 'Rajesh Traders','kiran','Approved'),
-        createData('G3456', 923857, 17,34523, 'Rajesh Traders','kiran','Approved'),
-     
+        createData('G3452', 0, 0, 34523, 'Rajesh Traders', 'kiran', 'Approval Pending'),
+        createData('G3454', 0, 0, 34523, 'Rajesh Traders', 'kiran', 'Approved'),
+        createData('G3456', 923857, 17, 34523, 'Rajesh Traders', 'kiran', 'Approved'),
+
     ];
     const searchFunction = () => {
         console.log(broker, "broker")
     }
     return (
         <>
-            <BaseTemplate name={"PurchaseOrders"} setBroker={setBroker} broker={broker} searchFunction={searchFunction}/>
+            <BaseTemplate name={"PurchaseOrders"} setBroker={setBroker} broker={broker} supplier={supplier} setSupplier={setSupplier} searchFunction={searchFunction} />
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
@@ -40,14 +41,14 @@ function PurchaseOrders() {
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 <TableCell component="th" scope="row">
-                                    {row.name}
+                                    {row.OfferID}
                                 </TableCell>
-                                <TableCell align="right">{row.calories}</TableCell>
-                                <TableCell align="right">{row.fat}</TableCell>
-                                <TableCell align="right">{row.carbs}</TableCell>
-                                <TableCell align="right">{row.protein}</TableCell>
-                                <TableCell align="right">{row.food}</TableCell>
-                                <TableCell align="right">{row.food1}</TableCell>
+                                <TableCell align="right">{row.PONum}</TableCell>
+                                <TableCell align="right">{row.PODate}</TableCell>
+                                <TableCell align="right">{row.supplierId}</TableCell>
+                                <TableCell align="right">{row.supplierName}</TableCell>
+                                <TableCell align="right">{row.broker}</TableCell>
+                                <TableCell align="right">{row.status}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
