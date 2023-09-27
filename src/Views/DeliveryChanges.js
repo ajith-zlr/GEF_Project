@@ -1,29 +1,28 @@
 import React from 'react'
 import BaseTemplate from './BaseTemplate'
-import { Paper, Select, Tab, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 
 function DeliveryChanges() {
-    const [age, setAge] = React.useState('');
-    const [value, setValue] = React.useState(0);
-    const [status,newStatus] = React.useState(0);
+    const [supplier, setSupplier] = React.useState('');
+        const [status, newStatus] = React.useState(0);
 
     const searchFunction = () => {
-        console.log(age, "age")
+        console.log(supplier, "supplier")
     }
-    function createData(name, calories, fat, carbs, protein, food,food1,food2,food3,food4,food5,food6,food7,food8) {
-        return { name, calories, fat, carbs, protein,food,food1,food2,food3,food4,food5,food6,food7,food8};
-      }
+    function createData(name, calories, fat, carbs, protein, food, food1, food2, food3, food4, food5, food6, food7, food8) {
+        return { name, calories, fat, carbs, protein, food, food1, food2, food3, food4, food5, food6, food7, food8 };
+    }
     const rows = [
-        createData('Frozen yoghurt', 159, 6.0, 24, 4.0,22,'ajith','as',1,2,3,4),
-        createData('Ice cream sandwich', 237, 9.0, 37, 4.3,'ajith','as',1,2,3,4,5),
-        createData('Eclair', 262, 16.0, 24, 6.0,'ajith','as',1,2,3,4,5),
-        createData('Cupcake', 305, 3.7, 67, 4.3,'ajith','as',1,2,3,4,5),
-        createData('Gingerbread', 356, 16.0, 49, 3.9,'ajith','as',1,2,3,4,5),
+        createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 22, 'ajith', 'as', 1, 2, 3, 4),
+        createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 'ajith', 'as', 1, 2, 3, 4, 5),
+        createData('Eclair', 262, 16.0, 24, 6.0, 'ajith', 'as', 1, 2, 3, 4, 5),
+        createData('Cupcake', 305, 3.7, 67, 4.3, 'ajith', 'as', 1, 2, 3, 4, 5),
+        createData('Gingerbread', 356, 16.0, 49, 3.9, 'ajith', 'as', 1, 2, 3, 4, 5),
     ];
 
     return (
         <>
-            <BaseTemplate name={"DeliveryChanges"} setAge={setAge} age={age}  newStatus ={newStatus} status ={status} searchFunction={searchFunction} />
+            <BaseTemplate name={"DeliveryChanges"} setSupplier={setSupplier} supplier={supplier} newStatus={newStatus} status={status} searchFunction={searchFunction} />
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
@@ -40,7 +39,7 @@ function DeliveryChanges() {
                             <TableCell align="right">Qc Status</TableCell>
                             <TableCell align="right">Rebate (INF)</TableCell>
                             <TableCell align="right">Actions</TableCell>
-                      
+
 
                         </TableRow>
                     </TableHead>
@@ -66,7 +65,7 @@ function DeliveryChanges() {
                                 <TableCell align="right">{row.food6}</TableCell>
                                 <TableCell align="right">{row.food7}</TableCell>
                                 <TableCell align="right">{row.food8}</TableCell>
-                            
+
                             </TableRow>
                         ))}
                     </TableBody>
