@@ -1,0 +1,32 @@
+img {
+  padding: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.div {
+  justify-content: center;
+}
+
+.hover-text:hover+.popup {
+  display: block;
+}
+
+.popup {
+  display: none;
+  border: 2px solid;
+  padding: 10px;
+  margin: 5px;
+  width: 120%;
+  border-radius: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered {
+  text-align: center;
+}
