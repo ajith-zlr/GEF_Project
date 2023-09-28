@@ -1,12 +1,15 @@
 
 import './App.css';
-import OrderHistory from './Views/OrderHistory';
+import BasicTable from './Constants/ReusableTable';
+import { PriceReport } from './Views/PriceReport';
+
 
 
 function App() {
   return (
     <div className="App">
-   <OrderHistory/>
+   
+  <PriceReport/>
     </div>
   );
 }
