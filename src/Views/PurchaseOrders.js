@@ -1,7 +1,7 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Popover } from '@mui/material'
 import React from 'react'
 import BaseTemplate from './BaseTemplate';
-import Invoice from './Invoice';
+
 
 function PurchaseOrders() {
     const [broker, setBroker] = React.useState('');
@@ -50,9 +50,7 @@ function PurchaseOrders() {
                                     {row.OfferID}
                                 </TableCell>
                                 <TableCell align="right">{row.PONum}</TableCell>
-                                <TableCell align="right">
-                                    <Invoice date={row.PODate}/>
-                                </TableCell>
+                                <TableCell align="right">{row.PODate}</TableCell>
                                 <TableCell align="right">{row.supplierId}</TableCell>
                                 <TableCell align="right">{row.supplierName}</TableCell>
                                 <TableCell align="right">{row.broker}</TableCell>
