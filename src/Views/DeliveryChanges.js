@@ -1,5 +1,6 @@
 import React from 'react'
-import BaseTemplate from './BaseTemplate'
+import BaseTemplate from './BaseTemplate';
+import Invoice from './Invoice';
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 
 function DeliveryChanges() {
@@ -56,7 +57,9 @@ function DeliveryChanges() {
                                 <TableCell align="right">{row.calories}</TableCell>
                                 <TableCell align="right">{row.fat}</TableCell>
                                 <TableCell align="right">{row.carbs}</TableCell>
-                                <TableCell align="right">{row.protein}</TableCell>
+                                <TableCell align="right">
+                                    <Invoice date={row.protein}/>
+                                </TableCell>
                                 <TableCell align="right">{row.food}</TableCell>
                                 <TableCell align="right">{row.food1}</TableCell>
                                 <TableCell align="right">{row.food2}</TableCell>
