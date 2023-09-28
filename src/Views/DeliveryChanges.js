@@ -4,23 +4,79 @@ import Invoice from './Invoice';
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 
 function DeliveryChanges() {
-    const [broker, setBroker] = React.useState('');
-    const [supplier, setSupplier] = React.useState('');
-    const [status, setStatus] = React.useState(0);
+  const [broker, setBroker] = React.useState("");
+  const [supplier, setSupplier] = React.useState("");
+  const [status, setStatus] = React.useState(0);
 
-    const searchFunction = () => {
-        console.log(supplier, "supplier")
-    }
-    function createData(name, calories, fat, carbs, protein, food, food1, food2, food3, food4, food5, food6, food7, food8) {
-        return { name, calories, fat, carbs, protein, food, food1, food2, food3, food4, food5, food6, food7, food8 };
-    }
-    const rows = [
-        createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 22, 'ajith', 'as', 1, 2, 3, 4),
-        createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 'ajith', 'as', 1, 2, 3, 4, 5),
-        createData('Eclair', 262, 16.0, 24, 6.0, 'ajith', 'as', 1, 2, 3, 4, 5),
-        createData('Cupcake', 305, 3.7, 67, 4.3, 'ajith', 'as', 1, 2, 3, 4, 5),
-        createData('Gingerbread', 356, 16.0, 49, 3.9, 'ajith', 'as', 1, 2, 3, 4, 5),
-    ];
+  const searchFunction = () => {
+    console.log(supplier, "supplier");
+  };
+  function createData(
+    name,
+    calories,
+    fat,
+    carbs,
+    protein,
+    food,
+    food1,
+    food2,
+    food3,
+    food4,
+    food5,
+    food6,
+    food7,
+    food8
+  ) {
+    return {
+      name,
+      calories,
+      fat,
+      carbs,
+      protein,
+      food,
+      food1,
+      food2,
+      food3,
+      food4,
+      food5,
+      food6,
+      food7,
+      food8,
+    };
+  }
+  const rows = [
+    createData(
+      "Frozen yoghurt",
+      159,
+      6.0,
+      24,
+      4.0,
+      22,
+      "ajith",
+      "as",
+      1,
+      2,
+      3,
+      4
+    ),
+    createData(
+      "Ice cream sandwich",
+      237,
+      9.0,
+      37,
+      4.3,
+      "ajith",
+      "as",
+      1,
+      2,
+      3,
+      4,
+      5
+    ),
+    createData("Eclair", 262, 16.0, 24, 6.0, "ajith", "as", 1, 2, 3, 4, 5),
+    createData("Cupcake", 305, 3.7, 67, 4.3, "ajith", "as", 1, 2, 3, 4, 5),
+    createData("Gingerbread", 356, 16.0, 49, 3.9, "ajith", "as", 1, 2, 3, 4, 5),
+  ];
 
     return (
         <>
@@ -80,4 +136,6 @@ function DeliveryChanges() {
     )
 }
 
-export default DeliveryChanges
+export default DeliveryChanges;
+
+// 6301696964
