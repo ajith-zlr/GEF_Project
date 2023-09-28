@@ -1,10 +1,15 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Popover } from '@mui/material'
 import React from 'react'
 import BaseTemplate from './BaseTemplate';
+import Invoice from './Invoice';
 
 function PurchaseOrders() {
     const [broker, setBroker] = React.useState('');
     const [supplier, setSupplier] = React.useState('');
+
+    const handleInvoiceHover = () => {
+        console.log('Invoice component is being hovered.');
+    };
 
     function createData(OfferID, PONum, PODate, supplierId, supplierName, broker, status) {
         return { OfferID, PONum, PODate, supplierId, supplierName, broker, status };
@@ -18,6 +23,7 @@ function PurchaseOrders() {
     const searchFunction = () => {
         console.log(broker, "broker")
     }
+
     return (
         <>
             <BaseTemplate name={"PurchaseOrders"} setBroker={setBroker} broker={broker} supplier={supplier} setSupplier={setSupplier} searchFunction={searchFunction} />
@@ -44,7 +50,9 @@ function PurchaseOrders() {
                                     {row.OfferID}
                                 </TableCell>
                                 <TableCell align="right">{row.PONum}</TableCell>
-                                <TableCell align="right">{row.PODate}</TableCell>
+                                <TableCell align="right">
+                                    <Invoice date={row.PODate}/>
+                                </TableCell>
                                 <TableCell align="right">{row.supplierId}</TableCell>
                                 <TableCell align="right">{row.supplierName}</TableCell>
                                 <TableCell align="right">{row.broker}</TableCell>
