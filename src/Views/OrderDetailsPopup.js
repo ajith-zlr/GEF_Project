@@ -1,32 +1,60 @@
-import React, { useState } from "react";
 import "./OrderDetailsPopup.css";
-import Button from "@mui/material/Button";
+import * as React from "react";
+import Popover from "@mui/material/Popover";
+import {
+  Typography,
+  TableCell,
+  Table,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 
-const OrderDetailsPopup = () => {
-  const [isPopupOpen, setPopupOpen] = useState(false);
+function OrderDetailsPopup({ supplier }) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const showPopup = () => {
-    setPopupOpen(true);
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
   };
 
-  const hidePopup = () => {
-    setPopupOpen(false);
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
   };
+
+  const open = Boolean(anchorEl);
 
   return (
-    <div className="App">
-      <h3>OrderDetailsPopup</h3>
-      <Button variant="contained" onClick={showPopup}>
-        DetailsPopup
-      </Button>
-      &emsp;
-      <Button variant="outlined" onClick={hidePopup}>
-        closePopup
-      </Button>
-      {isPopupOpen && (
+    <div>
+      <Typography
+        aria-owns={open ? "mouse-over-popover" : undefined}
+        aria-haspopup="true"
+        onMouseEnter={handlePopoverOpen}
+        onMouseLeave={handlePopoverClose}
+      >
+        {supplier}
+      </Typography>
+      <Popover
+        id="mouse-over-popover"
+        sx={{
+          pointerEvents: "none",
+        }}
+        open={open}
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+        onClose={handlePopoverClose}
+        disableRestoreFocus
+      >
         <div className="popup">
+
+            <h4 style={{textAlign: "center"}}>OrderDetails</h4>
           <div className="showpopup">
-            <div style={{textAlign:"center"}}>
+            <div style={{ textAlign: "center" }}>
               <p>Po Number : 923857</p>
               <p>Po Date : 17/07/203</p>
               <p>Delivery Location : Kakinada</p>
@@ -43,7 +71,7 @@ const OrderDetailsPopup = () => {
               <p>Offer Date : 17/07/2023</p>
             </div>
 
-            <table>
+            <table className="tb">
               <tr>
                 <th>Delivery Date</th>
                 <th>Qty (MT)</th>
@@ -73,9 +101,8 @@ const OrderDetailsPopup = () => {
             </div>
           </div>
         </div>
-      )}
+      </Popover>
     </div>
   );
-};
-
+}
 export default OrderDetailsPopup;

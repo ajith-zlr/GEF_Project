@@ -1,6 +1,9 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Popover } from '@mui/material'
 import React from 'react'
 import BaseTemplate from './BaseTemplate';
+import OrderDetailsPopup from './OrderDetailsPopup';
+;
+
 
 
 function PurchaseOrders() {
@@ -52,7 +55,9 @@ function PurchaseOrders() {
                                 <TableCell align="right">{row.PONum}</TableCell>
                                 <TableCell align="right">{row.PODate}</TableCell>
                                 <TableCell align="right">{row.supplierId}</TableCell>
-                                <TableCell align="right">{row.supplierName}</TableCell>
+                                <TableCell align="right">
+                                    <OrderDetailsPopup supplier={row.supplierName}/>
+                                </TableCell>
                                 <TableCell align="right">{row.broker}</TableCell>
                                 <TableCell align="right">{row.status}</TableCell>
                             </TableRow>
