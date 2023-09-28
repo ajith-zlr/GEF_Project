@@ -8,25 +8,15 @@ img {
   justify-content: center;
 }
 
-.hover-text:hover+.popup {
-  display: block;
-}
-
-.popup {
-  display: none;
+.popover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   border: 2px solid;
+  flex-wrap: wrap;
+  border-radius: 15px;
   padding: 10px;
   margin: 5px;
-  width: 120%;
-  border-radius: 15px;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.centered {
-  text-align: center;
+   width: 200
 }
